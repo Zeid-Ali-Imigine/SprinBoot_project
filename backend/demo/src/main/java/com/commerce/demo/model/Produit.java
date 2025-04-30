@@ -4,20 +4,14 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 import org.hibernate.annotations.CreationTimestamp;
+import jakarta.persistence.*;
+import jakarta.validation.constraints.*;
+import lombok.*;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-import jakarta.persistence.CascadeType;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.OneToMany;
-import jakarta.validation.constraints.Min;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.Size;
-
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
 public class Produit {
 
@@ -42,6 +36,7 @@ public class Produit {
 
     @ManyToOne(optional = false)
     @JoinColumn(name = "categorie_id")
+    @JsonIgnoreProperties("produits")
     private Categorie categorie;
 
     @CreationTimestamp
@@ -49,6 +44,6 @@ public class Produit {
     private LocalDateTime dateAjout;
 
     @OneToMany(mappedBy = "produit", cascade = CascadeType.ALL)
+    @JsonIgnoreProperties("produit")
     private List<ArticleCommande> articlesCommande;
 }
-

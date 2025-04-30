@@ -1,14 +1,13 @@
 package com.commerce.demo.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
+import jakarta.persistence.*;
 import jakarta.validation.constraints.Min;
+import lombok.*;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
 public class ArticleCommande {
 
@@ -18,10 +17,12 @@ public class ArticleCommande {
 
     @ManyToOne(optional = false)
     @JoinColumn(name = "commande_id")
+    @JsonIgnoreProperties("articlesCommande")
     private Commande commande;
 
     @ManyToOne(optional = false)
     @JoinColumn(name = "produit_id")
+    @JsonIgnoreProperties("articlesCommande")
     private Produit produit;
 
     @Min(1)
