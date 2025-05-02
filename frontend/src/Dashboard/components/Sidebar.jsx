@@ -39,8 +39,8 @@ function Sidebar({ isOpen, setIsOpen }) {
       path: '/dashboard/commandes',
     },
     { icon: faCog, text: 'Produits', path: '/dashboard/produits' },
-    { icon: faUsers, text: 'Client', path: '/dashboard/client' },
-    { icon: faLayerGroup, text: 'Categories', path: '/dashboard/Categories' },
+    { icon: faUsers, text: 'Client', path: '/dashboard/utilisateurs' },
+    { icon: faLayerGroup, text: 'Categories', path: '/dashboard/categories' },
     { 
       icon: faNewspaper,
       text: 'Rapports',

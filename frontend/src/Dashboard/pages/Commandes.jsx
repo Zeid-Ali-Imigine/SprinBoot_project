@@ -192,6 +192,8 @@ const fetchCommandes = async () => {
     return <div className="error-message">{error}</div>;
   }
 
+ 
+
   return (
     <div className="commandes-page">
       <div className="commandes-header">
@@ -235,7 +237,7 @@ const fetchCommandes = async () => {
                   className={`status-${commande.statut}`}
                 >
                   <td>#</td>
-                  <td>{commande.Utilisateur.nom}</td>
+                  <td>#</td>
                   <td>{new Date(commande.dateCommande).toLocaleDateString()}</td>
                   <td>{commande.montantTotal} MRU</td>
                   <td>
@@ -266,26 +268,26 @@ const fetchCommandes = async () => {
         </div>
       )}
 
-      {/* {showModal && selectedCommande && (
+      {showModal && selectedCommande && (
         <div className="modal">
           <div className="modal-content">
             <h2>Détails de la commande #{selectedCommande.reference}</h2>
             <div className="commande-details">
               <div className="commande-info">
                 <h3>Informations client</h3>
-                <p><strong>Nom:</strong> {selectedCommande.client.nom} {selectedCommande.client.prenom}</p>
-                <p><strong>Email:</strong> {selectedCommande.client.email}</p>
-                <p><strong>Téléphone:</strong> {selectedCommande.client.telephone}</p>
-                <p><strong>Adresse:</strong> {selectedCommande.livraison_adresse}</p>
+                <p><strong>Nom:</strong> ####</p>
+                <p><strong>Email:</strong> ###</p>
+                <p><strong>Téléphone:</strong> ###</p>
+                <p><strong>Adresse:</strong> ###</p>
               </div>
               
               <div className="commande-info">
                 <h3>Informations commande</h3>
-                <p><strong>Date:</strong> {new Date(selectedCommande.date_commande).toLocaleString()}</p>
-                <p><strong>Statut:</strong> {selectedCommande.statut}</p>
-                <p><strong>Méthode de paiement:</strong> {selectedCommande.paiement_methode}</p>
-                <p><strong>Statut paiement:</strong> {selectedCommande.paiement_statut}</p>
-                <p><strong>Montant total:</strong> {selectedCommande.montant_total} €</p>
+                <p><strong>Date:</strong> ###</p>
+                <p><strong>Statut:</strong> ###</p>
+                <p><strong>Méthode de paiement:</strong> ####</p>
+                <p><strong>Statut paiement:</strong> ###</p>
+                <p><strong>Montant total:</strong>####</p>
               </div>
               
               <div className="commande-produits">
@@ -300,14 +302,14 @@ const fetchCommandes = async () => {
                     </tr>
                   </thead>
                   <tbody>
-                    {selectedCommande.produits.map((produit, index) => (
-                      <tr key={index}>
-                        <td>{produit.nom}</td>
-                        <td>{produit.quantite}</td>
-                        <td>{produit.prix_unitaire} €</td>
-                        <td>{produit.prix_total} €</td>
+                    {/* {selectedCommande.produits.map((produit, index) => ( */}
+                      <tr key="###">
+                        <td>###</td>
+                        <td>###</td>
+                        <td>###</td>
+                        <td>###</td>
                       </tr>
-                    ))}
+                    {/* ))} */}
                   </tbody>
                 </table>
               </div>
@@ -317,7 +319,7 @@ const fetchCommandes = async () => {
             </button>
           </div>
         </div>
-      )} */}
+      )}
     </div>
   );
 };
