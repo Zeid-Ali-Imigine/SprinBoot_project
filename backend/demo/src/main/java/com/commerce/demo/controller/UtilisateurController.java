@@ -1,18 +1,15 @@
 package com.commerce.demo.controller;
 
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
-
-import com.commerce.demo.controller.base.GenericRestController;
+import com.commerce.demo.DTOs.UtilisateurDTO;
 import com.commerce.demo.model.Utilisateur;
 import com.commerce.demo.service.UtilisateurService;
+import com.commerce.demo.controller.base.GenericDtoRestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/api/Utilisateurs")
-public class UtilisateurController extends GenericRestController<Utilisateur, Long> {
-
+@RequestMapping("/api/utilisateurs")
+public class UtilisateurController extends GenericDtoRestController<Utilisateur, UtilisateurDTO, Long> {
     public UtilisateurController(UtilisateurService service) {
         super(service);
     }
-    
 }

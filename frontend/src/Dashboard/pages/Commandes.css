@@ -1,0 +1,237 @@
+.commandes-page {
+    padding: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  .commandes-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .status-filter {
+    padding: 8px 12px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+  }
+  
+  .commandes-table-container {
+    overflow-x: auto;
+  }
+  
+  .commandes-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  .commandes-table th, 
+  .commandes-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .commandes-table th {
+    background-color: #f5f5f5;
+    font-weight: 600;
+  }
+  
+  .status-badge {
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    text-transform: capitalize;
+  }
+  
+  .status-badge.en_attente {
+    background-color: #fff3cd;
+    color: #856404;
+  }
+  
+  .status-badge.prete {
+    background-color: #cce5ff;
+    color: #004085;
+  }
+  
+  .status-badge.expediee {
+    background-color: #d4edda;
+    color: #155724;
+  }
+  
+  .status-badge.livree {
+    background-color: #e2e3e5;
+    color: #383d41;
+  }
+  
+  .status-badge.annulee {
+    background-color: #f8d7da;
+    color: #721c24;
+  }
+  
+  .payment-status {
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    text-transform: capitalize;
+  }
+  
+  .payment-status.paye {
+    background-color: #d4edda;
+    color: #155724;
+  }
+  
+  .payment-status.en_attente {
+    background-color: #fff3cd;
+    color: #856404;
+  }
+  
+  .payment-status.echoue {
+    background-color: #f8d7da;
+    color: #721c24;
+  }
+  
+  .actions-cell {
+    display: flex;
+    gap: 8px;
+  }
+  
+  .action-btn {
+    padding: 6px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s;
+  }
+  
+  .action-btn.view {
+    background-color: #17a2b8;
+    color: white;
+  }
+  
+  .action-btn.prepare {
+    background-color: #28a745;
+    color: white;
+  }
+  
+  .action-btn.ship {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  .action-btn.cancel {
+    background-color: #dc3545;
+    color: white;
+  }
+  
+  .action-btn.print {
+    background-color: #6c757d;
+    color: white;
+  }
+  
+  .action-btn:hover {
+    opacity: 0.9;
+  }
+  
+  .action-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+  
+  .modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+  }
+  
+  .modal-content {
+    background-color: white;
+    padding: 25px;
+    border-radius: 8px;
+    max-width: 800px;
+    width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+  
+  .commande-details {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .commande-info, .commande-produits {
+    padding: 15px;
+    border: 1px solid #eee;
+    border-radius: 5px;
+  }
+  
+  .commande-produits table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+  }
+  
+  .commande-produits th, 
+  .commande-produits td {
+    padding: 8px 12px;
+    border-bottom: 1px solid #eee;
+    text-align: left;
+  }
+  
+  .commande-produits th {
+    background-color: #f9f9f9;
+  }
+  
+  .close-modal {
+    margin-top: 20px;
+    padding: 8px 16px;
+    background-color: #6c757d;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .loading-container, .no-commandes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 200px;
+    color: #666;
+  }
+  
+  .error-message {
+    color: #dc3545;
+    text-align: center;
+    margin-top: 50px;
+  }
+  
+  @media (max-width: 768px) {
+    .commandes-header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+    }
+    
+    .actions-cell {
+      flex-wrap: wrap;
+      gap: 5px;
+    }
+    
+    .action-btn {
+      padding: 5px 8px;
+    }
+  }

@@ -3,10 +3,10 @@ import { apiServices } from './api';
 import './Home.css';
 
 const Home = () => {
-    const [message, setMessage] = useState('');
+    const [message, setMessage] = useState([]);
 
     useEffect(() => {
-        apiServices.hello()
+        apiServices.produits.getAll()
             .then(response => {
                 setMessage(response.data);
             })
@@ -14,12 +14,21 @@ const Home = () => {
                 console.error(error);
             });
     }, []);
-    console.log(message);
+
+   console.log(message);
+    
     return (
         <div className="home">
             <h1>Welcome to the Home Page</h1>
             <p>This is a simple home page.</p>
-            <p>API Response: <span> {message} </span></p>
+            <p>API Response: <span>  </span></p>
+            {message.map(mesage => (
+                <div key={mesage.id} className="message-card">
+                    <h2>{mesage.nom}</h2>
+                    <p>{mesage.description}</p>
+                    <p>Price: {mesage.prix}</p>
+                </div>
+            ))}
             <br />
             <br />
             <br />

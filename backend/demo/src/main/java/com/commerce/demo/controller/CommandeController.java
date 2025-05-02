@@ -1,18 +1,15 @@
 package com.commerce.demo.controller;
 
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
-
-import com.commerce.demo.controller.base.GenericRestController;
+import com.commerce.demo.DTOs.CommandeDTO;
 import com.commerce.demo.model.Commande;
 import com.commerce.demo.service.CommandeService;
+import com.commerce.demo.controller.base.GenericDtoRestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/commandes")
-public class CommandeController extends GenericRestController<Commande, Long> {
-
+public class CommandeController extends GenericDtoRestController<Commande, CommandeDTO, Long> {
     public CommandeController(CommandeService service) {
         super(service);
     }
-    
 }
