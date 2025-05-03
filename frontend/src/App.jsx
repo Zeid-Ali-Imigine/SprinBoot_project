@@ -9,14 +9,16 @@ import Produits from './Dashboard/pages/Produits'
 import ProduitForm from './Dashboard/components/Forms/ProduitForm'
 import Categories from './Dashboard/pages/Categories'
 import CategorieForm from './Dashboard/components/Forms/CategorieForm'
-
-
+// import Produits from './Produits'; 
+import HomePage from './Hompage'
 function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Home />} />
+        {/*  Page d'accueil : */}
+        <Route path="/" element={<HomePage />} />
 
+        {/*  Tableau de bord */}
         <Route path="/dashboard" element={<DashboardLayout />}>
             <Route index element={<Dashboard />} />
             <Route path="/dashboard/commandes" element={<Commandes />} />
@@ -25,16 +27,16 @@ function App() {
             <Route path="/dashboard/produits/ajouter" element={<ProduitForm />} />
             <Route path="/dashboard/produits/modifier/:id" element={<ProduitForm />} />
 
-            
-            
+
             <Route path="/dashboard/categories" element={<Categories />} />
             <Route path="/dashboard/categories/ajouter" element={<CategorieForm />} />
             <Route path="/dashboard/categories/modifier/:id" element={<CategorieForm />} />
+          {/* <Route index element={<Dashboard />} />
+          <Route path="/dashboard/commandes" element={<Commandes />} /> */}
         </Route>
-
       </Routes>
     </Router>
-  )
+  );
 }
 
-export default App
+export default App;

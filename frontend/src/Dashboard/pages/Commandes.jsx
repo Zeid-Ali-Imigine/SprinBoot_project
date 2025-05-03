@@ -153,7 +153,7 @@ const fetchCommandes = async () => {
           </button>
         )}
         
-        {(commande.statut === 'en_attente' || commande.statut === 'prete') && (
+        {(commande.statut === 'EN_ATTENTE' || commande.statut === 'prete') && (
           <button 
             className="action-btn cancel"
             onClick={() => handleAnnuler(commande.id)}
@@ -204,9 +204,8 @@ const fetchCommandes = async () => {
           className="status-filter"
         >
           <option value="all">Toutes les commandes</option>
-          <option value="en_attente">En attente</option>
+          <option value="EN_ATTENTE">En Attente</option>
           <option value="prete">Prêtes</option>
-          <option value="expediee">Expédiées</option>
           <option value="livree">Livrées</option>
           <option value="annulee">Annulées</option>
         </select>
